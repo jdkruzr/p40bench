@@ -94,6 +94,47 @@ ceres_reference/  the two small June-study series the comparison charts
 - The box auto-stopped (not destroyed) itself at the end of the run via the
   Vast API — see the tail of `harness/run_all.sh`.
 
+## Follow-up: does P2P actually matter here? (spoiler: no)
+
+These are datacenter cards, so peer-to-peer DMA works natively — the thing
+consumer cards fuse off. We measured what it's worth, two ways.
+
+**Transport level** (`harness/p2p_lat.cu`, results in
+`p2p_ab/transport_matrix.csv`): per-pair 4-byte ping-pong latency and 128 MiB
+bandwidth, peer DMA vs host-staged.
+
+| | peer DMA | host-staged |
+|---|---|---|
+| latency (all pairs) | **~2.1–3.5 µs** | ~6.7–10.4 µs |
+| bandwidth, same-socket pairs | **~10.2 GB/s** | ~6.8–7.5 GB/s |
+| bandwidth, cross-socket pairs | ~8.3–9.1 GB/s | ~6.8–7.5 GB/s |
+
+P2P is ~3× lower latency and ~+30% bandwidth. Cross-socket costs ~15%
+bandwidth but **zero latency** — which is the transport-level mechanism
+behind chart 1's "NUMA wall doesn't exist" result: the per-layer all-reduces
+are small and latency-bound, and latency is socket-invariant.
+
+**Application level** (`p2p_ab/bench_*.json`): identical llama.cpp binary
+with a one-line env guard around `cudaDeviceEnablePeerAccess`
+(`GGML_CUDA_NO_PEER=1` → the driver host-stages the same copies, i.e. the
+consumer-card code path). UD-Q6_K_XL, tensor split, r=3:
+
+| config | peer on | peer off |
+|---|---|---|
+| 4-card tg128 | 21.21 ± 0.14 t/s | 21.21 ± 0.13 t/s |
+| 4-card pp512 | 344.6 t/s | 344.5 t/s |
+| 2-card tg128 | 15.69 ± 0.07 t/s | 15.69 ± 0.07 t/s |
+
+**Zero difference**, and PCIe counters showed identical bus traffic in both
+arms (~1.1 GB/s per active GPU). The arithmetic: a layer's all-reduce moves
+~12 KB; the peer-vs-staged latency delta (~6 µs × ~120 copies/token) sums to
+~0.4 ms against a 47 ms decode step — under 1%. At Pascal compute speeds,
+transport is never the bottleneck, so the datacenter-P2P advantage that shows
+up clearly at the transport level is invisible end-to-end. (Whether the same
+holds on modern silicon — where llama.cpp's optimized 2-GPU all-reduce
+kernel, compile-gated to Volta+, actually runs — is an open question this box
+can't answer.)
+
 ## Provenance
 
 June ceres study (full quant ladder, KLD tail analysis, retrieval, evals,

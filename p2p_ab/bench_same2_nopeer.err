@@ -1,0 +1,3 @@
+ggml_cuda_init: found 2 CUDA devices (Total VRAM: 48877 MiB):
+  Device 0: Tesla P40, compute capability 6.1, VMM: yes, VRAM: 24438 MiB
+  Device 1: Tesla P40, compute capability 6.1, VMM: yes, VRAM: 24438 MiB

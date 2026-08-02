@@ -1,0 +1,13 @@
+=== ARM quad_peer (gpus=0,1,2,3 nopeer=0) 19:11:22 ===
+"avg_ts": 344.580146
+"avg_ts": 21.209721
+=== ARM quad_nopeer (gpus=0,1,2,3 nopeer=1) 19:11:58 ===
+"avg_ts": 344.461319
+"avg_ts": 21.208910
+=== ARM same2_peer (gpus=0,1 nopeer=0) 19:12:34 ===
+"avg_ts": 326.757343
+"avg_ts": 15.689369
+=== ARM same2_nopeer (gpus=0,1 nopeer=1) 19:13:16 ===
+"avg_ts": 326.402132
+"avg_ts": 15.685172
+AB_DONE
