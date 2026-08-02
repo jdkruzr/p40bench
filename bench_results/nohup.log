@@ -1,0 +1,47 @@
+[2026-08-01 20:50:11] ===== P40 bench run starting; engine b9496 sm_61 =====
+[2026-08-01 20:50:11] CONFIG xl_quad_on starting (gpus=0,1,2,3 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-01 20:50:26] CONFIG xl_quad_on loaded in 15s
+[2026-08-01 21:31:16] CONFIG xl_quad_on done (2465s total)
+[2026-08-01 21:31:16] CONFIG xl_quad_off starting (gpus=0,1,2,3 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-01 21:31:32] CONFIG xl_quad_off loaded in 16s
+[2026-08-01 22:10:10] CONFIG xl_quad_off done (2334s total)
+[2026-08-01 22:10:10] CONFIG xl_same2_on starting (gpus=0,1 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-01 22:10:10] CONFIG xl_same2_on FAILED to become healthy; see server_xl_same2_on.log
+[2026-08-01 22:10:13] CONFIG xl_same2_off starting (gpus=0,1 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-01 22:10:13] CONFIG xl_same2_off FAILED to become healthy; see server_xl_same2_off.log
+[2026-08-01 22:10:16] CONFIG xl_cross2_on starting (gpus=0,2 kv=q8_0 spec=on depths=261120)
+[2026-08-01 22:10:31] CONFIG xl_cross2_on loaded in 15s
+[2026-08-01 22:52:26] CONFIG xl_cross2_on done (2530s total)
+[2026-08-01 22:52:26] CONFIG xl_cross2_off starting (gpus=0,2 kv=q8_0 spec=off depths=261120)
+[2026-08-01 22:52:41] CONFIG xl_cross2_off loaded in 15s
+[2026-08-01 23:32:27] CONFIG xl_cross2_off done (2401s total)
+[2026-08-01 23:32:28] CONFIG q8_quad_on starting (gpus=0,1,2,3 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-01 23:32:48] CONFIG q8_quad_on loaded in 20s
+[2026-08-02 00:12:51] CONFIG q8_quad_on done (2423s total)
+[2026-08-02 00:12:51] CONFIG q8_quad_off starting (gpus=0,1,2,3 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-02 00:13:06] CONFIG q8_quad_off loaded in 15s
+[2026-08-02 00:50:57] CONFIG q8_quad_off done (2286s total)
+[2026-08-02 00:50:57] CONFIG bf16_quad_on starting (gpus=0,1,2,3 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-02 00:51:23] CONFIG bf16_quad_on loaded in 26s
+[2026-08-02 01:43:16] CONFIG bf16_quad_on done (3139s total)
+[2026-08-02 01:43:16] CONFIG bf16_quad_off starting (gpus=0,1,2,3 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-02 01:43:36] CONFIG bf16_quad_off loaded in 20s
+[2026-08-02 02:32:20] CONFIG bf16_quad_off done (2944s total)
+[2026-08-02 02:32:20] CONFIG xl_quad_on_f16kv starting (gpus=0,1,2,3 kv=f16 spec=on depths=261120)
+[2026-08-02 02:32:35] CONFIG xl_quad_on_f16kv loaded in 15s
+[2026-08-02 03:00:28] CONFIG xl_quad_on_f16kv done (1688s total)
+[2026-08-02 03:00:28] CONFIG xl_quad_off_f16kv starting (gpus=0,1,2,3 kv=f16 spec=off depths=261120)
+[2026-08-02 03:00:44] CONFIG xl_quad_off_f16kv loaded in 16s
+[2026-08-02 03:27:12] CONFIG xl_quad_off_f16kv done (1604s total)
+[2026-08-02 03:27:12] VISION smoke starting
+[2026-08-02 03:28:01] VISION done (49s)
+[2026-08-02 03:28:01] PPL xl_q8kv starting
+[ppl_xl_q8kv] 21.33.121.572 I Final estimate: PPL = 5.2076 +/- 0.03226
+[2026-08-02 03:49:37] PPL xl_q8kv done (1296s)
+[2026-08-02 03:49:37] PPL xl_f16kv starting
+[ppl_xl_f16kv] 21.30.565.285 I Final estimate: PPL = 5.2072 +/- 0.03226
+[2026-08-02 04:11:12] PPL xl_f16kv done (1295s)
+[2026-08-02 04:11:12] PPL q8w_q8kv starting
+[ppl_q8w_q8kv] 21.05.350.630 I Final estimate: PPL = 5.2084 +/- 0.03228
+[2026-08-02 04:32:20] PPL q8w_q8kv done (1268s)
+[2026-08-02 04:32:20] PPL bf16_q8kv starting

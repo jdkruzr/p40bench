@@ -1,0 +1,95 @@
+[2026-08-01 20:50:11] ===== P40 bench run starting; engine b9496 sm_61 =====
+[2026-08-01 20:50:11] CONFIG xl_quad_on starting (gpus=0,1,2,3 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-01 20:50:26] CONFIG xl_quad_on loaded in 15s
+[calib] depth 32242: 138284 chars -> 32186 tokens
+[calib] depth 130546: 576799 chars -> 130532 tokens
+[calib] depth 260594: 1138605 chars -> 260559 tokens
+[cell] XL/quad/mtp-on/kv-q8_0 depth=32768 decode=28.08 t/s wall=118.4s
+[cell] XL/quad/mtp-on/kv-q8_0 depth=131072 decode=28.64 t/s wall=619.0s
+[cell] XL/quad/mtp-on/kv-q8_0 depth=261120 decode=15.41 t/s wall=1676.9s
+[2026-08-01 21:31:16] CONFIG xl_quad_on done (2465s total)
+[2026-08-01 21:31:16] CONFIG xl_quad_off starting (gpus=0,1,2,3 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-01 21:31:32] CONFIG xl_quad_off loaded in 16s
+[cell] XL/quad/mtp-off/kv-q8_0 depth=32768 decode=19.82 t/s wall=118.7s
+[cell] XL/quad/mtp-off/kv-q8_0 depth=131072 decode=16.61 t/s wall=599.9s
+[cell] XL/quad/mtp-off/kv-q8_0 depth=261120 decode=13.65 t/s wall=1590.4s
+[2026-08-01 22:10:10] CONFIG xl_quad_off done (2334s total)
+[2026-08-01 22:10:10] CONFIG xl_same2_on starting (gpus=0,1 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-01 22:10:10] CONFIG xl_same2_on FAILED to become healthy; see server_xl_same2_on.log
+[2026-08-01 22:10:13] CONFIG xl_same2_off starting (gpus=0,1 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-01 22:10:13] CONFIG xl_same2_off FAILED to become healthy; see server_xl_same2_off.log
+[2026-08-01 22:10:16] CONFIG xl_cross2_on starting (gpus=0,2 kv=q8_0 spec=on depths=261120)
+[2026-08-01 22:10:31] CONFIG xl_cross2_on loaded in 15s
+[cell] XL/cross2/mtp-on/kv-q8_0 depth=261120 decode=10.26 t/s wall=2506.9s
+[2026-08-01 22:52:26] CONFIG xl_cross2_on done (2530s total)
+[2026-08-01 22:52:26] CONFIG xl_cross2_off starting (gpus=0,2 kv=q8_0 spec=off depths=261120)
+[2026-08-01 22:52:41] CONFIG xl_cross2_off loaded in 15s
+[cell] XL/cross2/mtp-off/kv-q8_0 depth=261120 decode=8.77 t/s wall=2377.9s
+[2026-08-01 23:32:27] CONFIG xl_cross2_off done (2401s total)
+[2026-08-01 23:32:28] CONFIG q8_quad_on starting (gpus=0,1,2,3 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-01 23:32:48] CONFIG q8_quad_on loaded in 20s
+[cell] Q8_0/quad/mtp-on/kv-q8_0 depth=32768 decode=39.3 t/s wall=115.2s
+[cell] Q8_0/quad/mtp-on/kv-q8_0 depth=131072 decode=28.87 t/s wall=614.9s
+[cell] Q8_0/quad/mtp-on/kv-q8_0 depth=261120 decode=20.49 t/s wall=1664.0s
+[2026-08-02 00:12:51] CONFIG q8_quad_on done (2423s total)
+[2026-08-02 00:12:51] CONFIG q8_quad_off starting (gpus=0,1,2,3 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-02 00:13:06] CONFIG q8_quad_off loaded in 15s
+[cell] Q8_0/quad/mtp-off/kv-q8_0 depth=32768 decode=19.3 t/s wall=115.3s
+[cell] Q8_0/quad/mtp-off/kv-q8_0 depth=131072 decode=16.22 t/s wall=585.5s
+[cell] Q8_0/quad/mtp-off/kv-q8_0 depth=261120 decode=13.42 t/s wall=1561.9s
+[2026-08-02 00:50:57] CONFIG q8_quad_off done (2286s total)
+[2026-08-02 00:50:57] CONFIG bf16_quad_on starting (gpus=0,1,2,3 kv=q8_0 spec=on depths=32768,131072,261120)
+[2026-08-02 00:51:23] CONFIG bf16_quad_on loaded in 26s
+[cell] BF16/quad/mtp-on/kv-q8_0 depth=32768 decode=15.64 t/s wall=176.3s
+[cell] BF16/quad/mtp-on/kv-q8_0 depth=131072 decode=17.12 t/s wall=832.7s
+[cell] BF16/quad/mtp-on/kv-q8_0 depth=261120 decode=12.04 t/s wall=2095.9s
+[2026-08-02 01:43:16] CONFIG bf16_quad_on done (3139s total)
+[2026-08-02 01:43:16] CONFIG bf16_quad_off starting (gpus=0,1,2,3 kv=q8_0 spec=off depths=32768,131072,261120)
+[2026-08-02 01:43:36] CONFIG bf16_quad_off loaded in 20s
+[cell] BF16/quad/mtp-off/kv-q8_0 depth=32768 decode=14.87 t/s wall=168.1s
+[cell] BF16/quad/mtp-off/kv-q8_0 depth=131072 decode=12.98 t/s wall=787.4s
+[cell] BF16/quad/mtp-off/kv-q8_0 depth=261120 decode=11.12 t/s wall=1959.8s
+[2026-08-02 02:32:20] CONFIG bf16_quad_off done (2944s total)
+[2026-08-02 02:32:20] CONFIG xl_quad_on_f16kv starting (gpus=0,1,2,3 kv=f16 spec=on depths=261120)
+[2026-08-02 02:32:35] CONFIG xl_quad_on_f16kv loaded in 15s
+[cell] XL/quad/mtp-on/kv-f16 depth=261120 decode=17.56 t/s wall=1664.8s
+[2026-08-02 03:00:28] CONFIG xl_quad_on_f16kv done (1688s total)
+[2026-08-02 03:00:28] CONFIG xl_quad_off_f16kv starting (gpus=0,1,2,3 kv=f16 spec=off depths=261120)
+[2026-08-02 03:00:44] CONFIG xl_quad_off_f16kv loaded in 16s
+[cell] XL/quad/mtp-off/kv-f16 depth=261120 decode=13.98 t/s wall=1580.4s
+[2026-08-02 03:27:12] CONFIG xl_quad_off_f16kv done (1604s total)
+[2026-08-02 03:27:12] VISION smoke starting
+[vision] wall=25.4s usage={'completion_tokens': 300, 'prompt_tokens': 2134, 'total_tokens': 2434, 'prompt_tokens_details': {'cached_tokens': 0}}
+[2026-08-02 03:28:01] VISION done (49s)
+[2026-08-02 03:28:01] PPL xl_q8kv starting
+[ppl_xl_q8kv] 21.33.121.572 I Final estimate: PPL = 5.2076 +/- 0.03226
+[2026-08-02 03:49:37] PPL xl_q8kv done (1296s)
+[2026-08-02 03:49:37] PPL xl_f16kv starting
+[ppl_xl_f16kv] 21.30.565.285 I Final estimate: PPL = 5.2072 +/- 0.03226
+[2026-08-02 04:11:12] PPL xl_f16kv done (1295s)
+[2026-08-02 04:11:12] PPL q8w_q8kv starting
+[ppl_q8w_q8kv] 21.05.350.630 I Final estimate: PPL = 5.2084 +/- 0.03228
+[2026-08-02 04:32:20] PPL q8w_q8kv done (1268s)
+[2026-08-02 04:32:20] PPL bf16_q8kv starting
+[2026-08-02 04:36:03] REPAIR: waiting for in-flight llama-perplexity (bf16) to finish
+[2026-08-02 04:36:03] REPAIR: CONFIG xl_same2_on starting (taskset -c 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46)
+[2026-08-02 04:36:08] REPAIR: CONFIG xl_same2_on FAILED to become healthy; see server_xl_same2_on.log
+[2026-08-02 04:36:11] REPAIR: CONFIG xl_same2_on done (8s)
+[2026-08-02 04:36:11] REPAIR: CONFIG xl_same2_off starting (taskset -c 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46)
+[2026-08-02 04:36:16] REPAIR: CONFIG xl_same2_off FAILED to become healthy; see server_xl_same2_off.log
+[2026-08-02 04:36:19] REPAIR: CONFIG xl_same2_off done (8s)
+[2026-08-02 04:36:19] REPAIR: REPAIR_DONE tarball refreshed; stopping instance 46531992 in 15 min
+[2026-08-02 04:37:56] REPAIR: waiting for in-flight llama-perplexity (bf16) to finish
+[ppl_bf16_q8kv] 28.24.381.221 I Final estimate: PPL = 5.2090 +/- 0.03229
+[2026-08-02 05:00:56] REPAIR: CONFIG xl_same2_on starting (taskset -c 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46)
+[2026-08-02 05:01:12] REPAIR: CONFIG xl_same2_on loaded in 16s
+[cell] XL/same2/mtp-on/kv-q8_0 depth=32768 decode=24.26 t/s wall=135.9s
+[cell] XL/same2/mtp-on/kv-q8_0 depth=131072 decode=17.58 t/s wall=835.6s
+[cell] XL/same2/mtp-on/kv-q8_0 depth=261120 decode=10.3 t/s wall=2493.6s
+[2026-08-02 05:59:05] REPAIR: CONFIG xl_same2_on done (3489s)
+[2026-08-02 05:59:05] REPAIR: CONFIG xl_same2_off starting (taskset -c 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46)
+[2026-08-02 05:59:20] REPAIR: CONFIG xl_same2_off loaded in 15s
+[cell] XL/same2/mtp-off/kv-q8_0 depth=32768 decode=14.48 t/s wall=136.4s
+[cell] XL/same2/mtp-off/kv-q8_0 depth=131072 decode=11.33 t/s wall=802.9s
+[cell] XL/same2/mtp-off/kv-q8_0 depth=261120 decode=8.8 t/s wall=2364.2s
+[2026-08-02 06:54:32] REPAIR: CONFIG xl_same2_off done (3327s)

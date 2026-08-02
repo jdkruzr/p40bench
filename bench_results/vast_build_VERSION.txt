@@ -1,0 +1,5 @@
+llama.cpp version: b9264
+CUDA version: 12.8.1
+Architectures: 75-virtual;80-virtual;86-virtual;89-virtual;90-virtual;100-virtual;120-virtual
+Build date: 2026-05-21
+Build hash: ce02093fdda7f3cc00eec5caec067b3cf5e55143

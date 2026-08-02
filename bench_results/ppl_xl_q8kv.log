@@ -1,0 +1,16 @@
+0.00.090.186 I common_init_result: fitting params to device memory ...
+0.00.090.190 I common_init_result: (for bugs during this step try to reproduce them with -fit off, or provide --verbose logs if the bug only occurs with -fit on)
+0.00.090.304 W common_fit_params: failed to fit params to free device memory: llama_params_fit is not implemented for SPLIT_MODE_TENSOR, abort
+0.10.478.275 W llama_context: n_ctx_seq (131072) < n_ctx_train (262144) -- the full capacity of the model will not be utilized
+0.10.478.369 W NCCL not compiled in; falling back to internal AllReduce.  Recompile with -DGGML_CUDA_NCCL=ON for best multi-GPU performance.
+0.10.478.388 W internal AllReduce init failed (n_devices != 2?); falling back to meta-backend butterfly
+0.10.677.871 I common_init_from_params: warming up the model with an empty run - please wait ... (--no-warmup to disable)
+0.11.346.531 I 
+0.11.346.648 I system_info: n_threads = 24 (n_threads_batch = 24) / 48 | CUDA : ARCHS = 610 | USE_GRAPHS = 1 | PEER_MAX_BATCH_SIZE = 128 | CPU : SSE3 = 1 | SSSE3 = 1 | AVX = 1 | AVX2 = 1 | F16C = 1 | FMA = 1 | BMI2 = 1 | AVX512 = 1 | LLAMAFILE = 1 | OPENMP = 1 | REPACK = 1 | 
+0.11.346.720 I perplexity: tokenizing the input ..
+0.11.949.359 I perplexity: tokenization took 602.667 ms
+0.11.949.593 I perplexity: calculating perplexity over 2 chunks, n_ctx=131072, batch_size=2048, n_seq=1
+10.54.104.508 I perplexity: 642.15 seconds per pass - ETA 21.40 minutes
+[1]4.9939,[2]5.2076,
+21.33.121.572 I Final estimate: PPL = 5.2076 +/- 0.03226
+

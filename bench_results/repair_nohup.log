@@ -1,0 +1,8 @@
+[2026-08-02 04:37:56] REPAIR: waiting for in-flight llama-perplexity (bf16) to finish
+[ppl_bf16_q8kv] 28.24.381.221 I Final estimate: PPL = 5.2090 +/- 0.03229
+[2026-08-02 05:00:56] REPAIR: CONFIG xl_same2_on starting (taskset -c 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46)
+[2026-08-02 05:01:12] REPAIR: CONFIG xl_same2_on loaded in 16s
+[2026-08-02 05:59:05] REPAIR: CONFIG xl_same2_on done (3489s)
+[2026-08-02 05:59:05] REPAIR: CONFIG xl_same2_off starting (taskset -c 0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46)
+[2026-08-02 05:59:20] REPAIR: CONFIG xl_same2_off loaded in 15s
+[2026-08-02 06:54:32] REPAIR: CONFIG xl_same2_off done (3327s)
