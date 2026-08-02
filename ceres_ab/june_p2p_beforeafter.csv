@@ -1,0 +1,10 @@
+# UD-Q5_K_XL decode t/s at depth, llama-bench, 2x RTX 5060 Ti (ceres)
+# before = 2026-06-16 (P2P unavailable/CNS), after = 2026-06-26 (patched kernel module, P2P verified OK)
+depth,p2p_off_ts,p2p_on_ts,delta_pct
+0,32.63,33.31,2.1
+4096,33.09,33.41,1.0
+16384,31.63,32.03,1.3
+32768,29.56,30.17,2.1
+65536,26.77,26.78,0.0
+131072,22.24,22.11,-0.6
+180224,19.43,19.53,0.5

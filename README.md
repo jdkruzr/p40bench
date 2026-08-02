@@ -130,10 +130,34 @@ arms (~1.1 GB/s per active GPU). The arithmetic: a layer's all-reduce moves
 ~12 KB; the peer-vs-staged latency delta (~6 µs × ~120 copies/token) sums to
 ~0.4 ms against a 47 ms decode step — under 1%. At Pascal compute speeds,
 transport is never the bottleneck, so the datacenter-P2P advantage that shows
-up clearly at the transport level is invisible end-to-end. (Whether the same
-holds on modern silicon — where llama.cpp's optimized 2-GPU all-reduce
-kernel, compile-gated to Volta+, actually runs — is an open question this box
-can't answer.)
+up clearly at the transport level is invisible end-to-end.
+
+### Blackwell postscript (`ceres_ab/`)
+
+We then checked the modern-silicon side on the 2× RTX 5060 Ti box, which had
+P2P force-enabled in June via a patched open-kernel-module (NCCL showed
++20–27% busbw, −24% latency at the time — the numbers that make people say
+"you must enable P2P").
+
+- **June's own before/after** (`june_p2p_beforeafter.csv`, same llama-bench
+  methodology 10 days apart): P2P was worth **+0–2.1% decode at shallow
+  depth, ~0% at 64K+** — within day-to-day variance. The NCCL win never
+  reached tokens/sec.
+- **Transport matrix on this platform** (`transport_matrix_ceres.csv`): both
+  modes measure ~6.4 µs / 13.2 GB/s — PCIe Gen5 host-staging is already fast
+  enough that peer DMA has nothing to add for memcpy-path transfers.
+- **The accidental clincher:** a routine driver userspace upgrade (595.84
+  over the 595.71-p2p module) had silently *revoked* peer access
+  (`cudaDeviceCanAccessPeer` = 0) at some point before our test — production
+  inference ran P2P-less for weeks and **nobody noticed**. (This also means
+  our fresh env-guard A/B on this box was unwittingly staged-vs-staged —
+  28.95 vs 28.90 t/s, `bench_*.json` — which certifies the noise floor, while
+  the June before/after carries the with/without-P2P comparison.)
+
+Across two silicon generations, three measurement approaches, and one
+accidental natural experiment: **for llama.cpp tensor-split batch-1
+inference, P2P is not a knob that matters.** State your batch size before
+citing interconnect requirements.
 
 ## Provenance
 
